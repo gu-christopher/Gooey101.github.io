@@ -1,5 +1,5 @@
 ///
-/// Dimension by Pixelarity
+/// Indivisible by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -32,7 +32,7 @@
 		background: _palette(bg);
 
 		// Stops initial animations until page loads.
-			&.is-preload {
+			&.is-preload-0 {
 				*, *:before, *:after {
 					@include vendor('animation', 'none !important');
 					@include vendor('transition', 'none !important');
