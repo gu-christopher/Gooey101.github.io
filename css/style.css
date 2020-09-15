@@ -157,6 +157,10 @@ body {
     display: flex;
 }
 
+.small-box .small-box-img:hover {
+    transform: scale(1.05);
+}
+
 .small-box-img {
     height: 30px;
 }
