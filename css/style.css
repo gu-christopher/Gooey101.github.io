@@ -158,7 +158,12 @@ body {
 }
 
 .small-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.small-box {
+    cursor: pointer;
+    transition: all 0.1s linear;
 }
 
 .small-box-img {
@@ -415,7 +420,12 @@ body {
 }
 
 #education .large-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+#education .large-box {
+    cursor: pointer;
+    transition: all 0.1s linear;
 }
 
 #education .subtitle-text {

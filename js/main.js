@@ -117,5 +117,7 @@ $('.navbar a').click(function(e) {
     
 });
 
-$('#press .press-grid .large-box').click(goToDataLink);
+$('#education .large-box').click(goToDataLink);
+$('#education .extracurricular-grid .small-box').click(goToDataLink);
 $('#portfolio .portfolio-grid .portfolio-item').click(goToDataLink);
+$('#press .press-grid .large-box').click(goToDataLink);
