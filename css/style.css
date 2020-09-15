@@ -397,6 +397,10 @@ body {
     #about .contact-me-button {
         margin-top: 25px;
     }
+
+    #about .me-img {
+        height: 158px;
+    }
 }
 
 /* End Home Page Center Page Box Specific Responsive Styles */
