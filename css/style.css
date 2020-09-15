@@ -157,8 +157,8 @@ body {
     display: flex;
 }
 
-.small-box .small-box-img:hover {
-    transform: scale(1.05);
+.small-box:hover {
+    transform: scale(1.1);
 }
 
 .small-box-img {
@@ -412,6 +412,10 @@ body {
 /* Education Page Center Page Box Specific Styles */
 #education .large-box {
     margin-bottom: 20px;
+}
+
+#education .large-box:hover {
+    transform: scale(1.1);
 }
 
 #education .subtitle-text {
