@@ -1,10 +1,10 @@
-function adjustFontSizes() {
+function setCenterPageBoxTop() {
     var centerPageBox = $('.center-page-box');
 
     if($(window).width() > 814) {
         centerPageBox.css('top', $(window).height() / 2 - $('.center-page-box').height() / 2);
     } else {
-        centerPageBox.css('top', '');
+        centerPageBox.css('top', '0');
     }
 }
 
@@ -33,7 +33,7 @@ function goToDataLink() {
 }
 
 $(document).ready(() => {
-    adjustFontSizes();
+    setCenterPageBoxTop();
     adjustBoxWidths();
     setupCenterBoxes();
 
@@ -47,7 +47,7 @@ $(document).ready(() => {
 });
 
 $(window).resize(() => {
-    adjustFontSizes();
+    setCenterPageBoxTop();
     adjustBoxWidths();
 
     if($(window).width() > 991) {
