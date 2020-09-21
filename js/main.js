@@ -81,40 +81,41 @@ $('.navbar-brand').click(() => {
 });
 
 $('.navbar a').click(function(e) {
-    e.preventDefault();
+    if($(this)[0].hash !== "") {
+        e.preventDefault();
 
-    var prevActivePage = window.localStorage.getItem('activePage');
+        var prevActivePage = window.localStorage.getItem('activePage');
 
-    window.localStorage.setItem('activePage', $(this)[0].hash);
+        window.localStorage.setItem('activePage', $(this)[0].hash);
 
-    var activePage = window.localStorage.getItem('activePage');
+        var activePage = window.localStorage.getItem('activePage');
 
-    $('.navbar a.active').removeClass('active');
-    $(this).addClass('active');
+        $('.navbar a.active').removeClass('active');
+        $(this).addClass('active');
 
-    adjustBoxWidths();
+        adjustBoxWidths();
 
-    if(prevActivePage !== activePage) {
-        if($('.center-page-box').index($(prevActivePage)) > $('.center-page-box').index($(activePage))) {
-            $(activePage).css('left', '-150%');
-            $(prevActivePage).animate({
-                left: '150%',
-                opacity: 0
-            }, 500);
-        } else {
-            $(activePage).css('left', '150%');
-            $(prevActivePage).animate({
-                left: '-150%',
-                opacity: 0
+        if(prevActivePage !== activePage) {
+            if($('.center-page-box').index($(prevActivePage)) > $('.center-page-box').index($(activePage))) {
+                $(activePage).css('left', '-150%');
+                $(prevActivePage).animate({
+                    left: '150%',
+                    opacity: 0
+                }, 500);
+            } else {
+                $(activePage).css('left', '150%');
+                $(prevActivePage).animate({
+                    left: '-150%',
+                    opacity: 0
+                }, 500);
+            }
+
+            $(activePage).animate({
+                left: '50%',
+                opacity: 1
             }, 500);
         }
-
-        $(activePage).animate({
-            left: '50%',
-            opacity: 1
-        }, 500);
     }
-    
 });
 
 $('#education .large-box').click(goToDataLink);
