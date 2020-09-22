@@ -121,4 +121,5 @@ $('.navbar a').click(function(e) {
 $('#education .large-box').click(goToDataLink);
 $('#education .extracurricular-grid .small-box').click(goToDataLink);
 $('#portfolio .portfolio-grid .portfolio-item').click(goToDataLink);
+$('#experience .experiences-grid .large-box').click(goToDataLink);
 $('#press .press-grid .large-box').click(goToDataLink);

@@ -476,6 +476,15 @@ body {
     margin-bottom: 20px;
 }
 
+#experience .experiences-grid .large-box:hover {
+    transform: scale(1.05);
+}
+
+#experience .experiences-grid .large-box {
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
 #press .press-grid .large-box {
     cursor: pointer;
     transition: all 0.1s linear;
