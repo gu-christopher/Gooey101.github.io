@@ -30,7 +30,8 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .title-text {
@@ -44,9 +45,8 @@ body {
 }
 
 .copyright {
-    width: 100%;
-    position: fixed;
-    bottom: 29px;
+    margin-top: 50px;
+    padding-bottom: 29px;
 }
 
 .copyright-text {
@@ -55,12 +55,6 @@ body {
     width: 100%;
     text-align: center;
     margin: 0;
-}
-
-@media (max-width: 814px) {
-    .copyright {
-        bottom: 17px;
-    }
 }
 
 /* Large Box Styles */
@@ -261,75 +255,33 @@ body {
     max-width: calc(var(--center-box-max-width) * 1px);
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    position: absolute;
-    left: 150%;
-    transform: translateX(-50%);
-    max-height: calc(100% - (var(--navbar-total-height) * 1px) - (var(--uniform-padding) * 1px));
-    overflow-y: auto;
+    margin: auto;
+    margin-top: 75px;
 }
 
-.center-page-box-info-container {
-    width: 100%;
-    padding-top: calc((var(--center-box-max-height) / var(--center-box-max-width)) * 100%);
-    position: relative;
-}
-
-.center-page-box-info {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.center-page-box {
     padding: calc(var(--center-box-padding) * 1px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%;
 }
 
-.center-page-box-info > .title-text {
+.center-page-box > .title-text {
     margin-bottom: 50px;
     margin-top: 0;
 }
 
-.center-page-box-info > * {
+.center-page-box > * {
     position: relative;
 }
-
-/* Center Page Box Responsive Styles */
-@media (max-width: 878px) {
-    .center-page-box-info {
-        padding: calc(var(--center-box-padding-medium) * 1px);
-    }
-}
-
-@media (max-width: 814px) {
-    .center-page-box {
-        margin: 140px auto calc(var(--uniform-padding) * 1px) auto;
-    }
-
-    .center-page-box-info-container {
-        padding-top: 0;
-        position: static;
-        height: 100%;
-        max-height: 100%;
-    }
-
-    .center-page-box-info,
-    .center-page-box-info > * {
-        position: static;
-    }
-
-    .center-page-box-info {
-        width: 100%;
-    }
-}
-
-/* End Center Page Box Responsive Styles */
 
 /* End Center Page Box Styles */
 
 /* Home Page Center Page Box Specific Styles */
+#about {
+    margin-top: 200px;
+}
+
 #about .me-img-container {
     height: var(--me-img-pct-height);
     text-align: center;
@@ -338,6 +290,7 @@ body {
 #about .me-img {
     border-radius: 100%;
     height: 100%;
+    max-height: 240px;
     width: auto;
 }
 
@@ -385,7 +338,7 @@ body {
     color: #FFFFFF;
     text-decoration: none;
     padding: 10px 26px;
-    margin-top: auto;
+    margin-top: 20px;
     transition: all 0.2s linear;
 }
 
@@ -436,6 +389,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    max-width: 481px;
     height: var(--extracurriculars-grid-pct-height);
 }
 
@@ -483,6 +437,11 @@ body {
 #experience .experiences-grid .large-box {
     cursor: pointer;
     transition: all 0.1s linear;
+}
+
+#experience, #press {
+    max-height: calc(100% - (var(--navbar-total-height) * 1px) - (var(--uniform-padding) * 2px));
+    overflow-y: auto;
 }
 
 #press .press-grid .large-box {

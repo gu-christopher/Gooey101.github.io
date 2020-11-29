@@ -1,31 +1,7 @@
-function setCenterPageBoxTop() {
-    var centerPageBox = $('.center-page-box');
-
-    if($(window).width() > 814) {
-        centerPageBox.css('top', $(window).height() / 2 - $('.center-page-box').height() / 2);
-    } else {
-        centerPageBox.css('top', '0');
-    }
-}
-
 function adjustBoxWidths() {
     if(window.localStorage.getItem('activePage') === '#education') {
         $('.extracurricular-grid').css('width', $('#education .large-box').innerWidth() + 'px');
     }
-}
-
-function setupCenterBoxes() {
-    var activePage = window.localStorage.getItem('activePage');
-
-    if(!activePage) {
-        activePage = '#about';
-    }
-
-    $('.center-page-box').each(function(index, value) {
-        if($(this).is($(activePage))) {
-            $(this).css('left', '50%');
-        }
-    });
 }
 
 function goToDataLink() {
@@ -33,9 +9,7 @@ function goToDataLink() {
 }
 
 $(document).ready(() => {
-    setCenterPageBoxTop();
     adjustBoxWidths();
-    setupCenterBoxes();
 
     var activePage = window.localStorage.getItem('activePage');
 
@@ -47,7 +21,6 @@ $(document).ready(() => {
 });
 
 $(window).resize(() => {
-    setCenterPageBoxTop();
     adjustBoxWidths();
 
     if($(window).width() > 991) {
@@ -81,40 +54,22 @@ $('.navbar-brand').click(() => {
 });
 
 $('.navbar a').click(function(e) {
-    if($(this)[0].hash !== "") {
-        e.preventDefault();
+    if (this.hash !== "") {
+        // Prevent default anchor click behavior
 
-        var prevActivePage = window.localStorage.getItem('activePage');
-
-        window.localStorage.setItem('activePage', $(this)[0].hash);
-
-        var activePage = window.localStorage.getItem('activePage');
-
-        $('.navbar a.active').removeClass('active');
+        $('.navbar a').removeClass('active');
         $(this).addClass('active');
 
-        adjustBoxWidths();
-
-        if(prevActivePage !== activePage) {
-            if($('.center-page-box').index($(prevActivePage)) > $('.center-page-box').index($(activePage))) {
-                $(activePage).css('left', '-150%');
-                $(prevActivePage).animate({
-                    left: '150%',
-                    opacity: 0
-                }, 500);
-            } else {
-                $(activePage).css('left', '150%');
-                $(prevActivePage).animate({
-                    left: '-150%',
-                    opacity: 0
-                }, 500);
-            }
-
-            $(activePage).animate({
-                left: '50%',
-                opacity: 1
-            }, 500);
-        }
+        e.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top - 200
+        }, 800, function() {});
     }
 });
 
