@@ -10,14 +10,6 @@ function goToDataLink() {
 
 $(document).ready(() => {
     adjustBoxWidths();
-
-    var activePage = window.localStorage.getItem('activePage');
-
-    if(!activePage) {
-        activePage = '#about';
-    }
-
-    $('a[href="' + activePage + '"]').click();
 });
 
 $(window).resize(() => {
