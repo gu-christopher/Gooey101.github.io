@@ -1,3 +1,6 @@
+alert('This website is outdated. Please navigate to: chris-corner.com');
+
+
 function adjustBoxWidths() {
     if(window.localStorage.getItem('activePage') === '#education') {
         $('.extracurricular-grid').css('width', $('#education .large-box').innerWidth() + 'px');
